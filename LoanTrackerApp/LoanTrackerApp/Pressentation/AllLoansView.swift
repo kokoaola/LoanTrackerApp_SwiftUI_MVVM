@@ -68,9 +68,8 @@ struct AllLoansView: View {
     
     func deleteItems(offset:IndexSet){
         withAnimation {
-//            offset.map{loans[$0].forEach(veiwContext.delete)
-//                PersistenceController.shared.save()
-//            }
+            offset.map { loans[$0] }.forEach(veiwContext.delete)
+                PersistenceController.shared.save()
         }
     }
 }
